@@ -8,5 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('systema-mype-erp');
+  protected readonly title = signal('sistema-mype-erp');
 }

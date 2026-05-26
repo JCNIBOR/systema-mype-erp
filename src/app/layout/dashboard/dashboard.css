@@ -1,0 +1,62 @@
+.app-layout {
+
+  display: flex;
+
+  min-height: 100vh;
+
+  background: #f4f6f9;
+}
+
+/* CONTENIDO */
+.main-container {
+
+  margin-left: 260px;
+
+  width: calc(100% - 260px);
+
+  transition: all .3s ease;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 100vh;
+}
+
+/* EXPANDIDO */
+.main-container.expanded {
+
+  margin-left: 70px;
+
+  width: calc(100% - 70px);
+}
+
+/* NAVBAR */
+.main-header {
+
+  height: 57px;
+
+  background: white;
+
+  border-bottom: 1px solid #dee2e6;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 1rem;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 999;
+}
+
+/* CONTENIDO */
+.content-area {
+
+  padding: 1.5rem;
+}

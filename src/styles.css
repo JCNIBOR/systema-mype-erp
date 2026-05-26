@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "admin-lte/dist/css/adminlte.min.css";
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --erp-primary: #1e3c72;
+  --erp-secondary: #2a5298;
+  --erp-accent: #00c6ff;
+}
+
+.sidebar {
+  background: var(--erp-primary);
+}

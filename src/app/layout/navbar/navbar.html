@@ -1,0 +1,200 @@
+<nav class="main-header navbar navbar-expand">
+
+  <!-- IZQUIERDA -->
+  <ul class="navbar-nav align-items-center">
+
+    <!-- HAMBURGUESA -->
+    <li class="nav-item">
+
+      <a
+        class="nav-link"
+        role="button"
+        (click)="onToggleSidebar()">
+
+        <i class="bi bi-list"></i>
+
+      </a>
+
+    </li>
+
+    <!-- LIVE PREVIEW -->
+    <li class="nav-item d-none d-md-block">
+
+      <a class="nav-link">
+        Live Preview
+      </a>
+
+    </li>
+
+    <!-- DOCUMENTATION -->
+    <li class="nav-item d-none d-md-block">
+
+      <a class="nav-link">
+        Documentation
+      </a>
+
+    </li>
+
+  </ul>
+
+  <!-- DERECHA -->
+  <ul class="navbar-nav ms-auto align-items-center">
+
+    <!-- SEARCH -->
+    <li class="nav-item">
+
+      <a class="nav-link">
+
+        <i class="bi bi-search"></i>
+
+      </a>
+
+    </li>
+
+    <!-- MENSAJES -->
+    <li class="nav-item dropdown">
+
+      <a
+        class="nav-link position-relative"
+        data-bs-toggle="dropdown">
+
+        <i class="bi bi-chat-text"></i>
+
+        <span class="badge rounded-pill bg-danger navbar-badge">
+
+          3
+
+        </span>
+
+      </a>
+
+      <div class="dropdown-menu dropdown-menu-end dropdown-lg">
+
+        <span class="dropdown-header">
+
+          3 mensajes
+
+        </span>
+
+        <div class="dropdown-divider"></div>
+
+        <a class="dropdown-item">
+
+          Nuevo mensaje recibido
+
+        </a>
+
+      </div>
+
+    </li>
+
+    <!-- ALERTAS -->
+    <li class="nav-item dropdown">
+
+      <a
+        class="nav-link position-relative"
+        data-bs-toggle="dropdown">
+
+        <i class="bi bi-bell-fill"></i>
+
+        <span class="badge rounded-pill bg-warning navbar-badge">
+
+          15
+
+        </span>
+
+      </a>
+
+      <div class="dropdown-menu dropdown-menu-end dropdown-lg">
+
+        <span class="dropdown-header">
+
+          15 notificaciones
+
+        </span>
+
+        <div class="dropdown-divider"></div>
+
+        <a class="dropdown-item">
+
+          Nueva alerta del sistema
+
+        </a>
+
+      </div>
+
+    </li>
+
+    <!-- FULLSCREEN -->
+    <li class="nav-item">
+
+      <a
+        class="nav-link"
+        (click)="toggleFullscreen()">
+
+        <i class="bi bi-arrows-fullscreen"></i>
+
+      </a>
+
+    </li>
+
+    <!-- USUARIO -->
+    <li class="nav-item dropdown">
+
+      <a
+        class="nav-link dropdown-toggle"
+        data-bs-toggle="dropdown">
+
+        <i class="bi bi-person-fill"></i>
+
+        {{ userName }}
+
+      </a>
+
+      <ul class="dropdown-menu dropdown-menu-end">
+
+        <li>
+
+          <a class="dropdown-item">
+
+            Perfil
+
+          </a>
+
+        </li>
+
+        <li>
+
+          <a class="dropdown-item">
+
+            Configuración
+
+          </a>
+
+        </li>
+
+        <li>
+
+          <hr class="dropdown-divider">
+
+        </li>
+
+        <li>
+
+          <a
+            class="dropdown-item text-danger"
+            (click)="logout()">
+
+            Cerrar sesión
+
+          </a>
+
+        </li>
+
+      </ul>
+
+    </li>
+
+  </ul>
+
+</nav>

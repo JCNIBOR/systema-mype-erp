@@ -1,0 +1,78 @@
+.main-header {
+
+  height: 57px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #dee2e6;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 1rem;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 999;
+}
+
+/* LINKS */
+.nav-link {
+
+  color: #495057;
+
+  cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: .4rem;
+
+  font-size: .95rem;
+}
+
+/* HOVER */
+.nav-link:hover {
+
+  color: #0d6efd;
+}
+
+/* BADGES */
+.navbar-badge {
+
+  font-size: .65rem;
+
+  position: absolute;
+
+  top: 6px;
+
+  right: 2px;
+}
+
+/* DROPDOWN */
+.dropdown-menu {
+
+  min-width: 250px;
+
+  border-radius: .5rem;
+
+  border: 1px solid #dee2e6;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+/* HEADER DROPDOWN */
+.dropdown-header {
+
+  font-size: .85rem;
+
+  color: #6c757d;
+
+  padding: .75rem 1rem;
+}

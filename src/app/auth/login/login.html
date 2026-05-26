@@ -1,0 +1,73 @@
+<form>
+
+  <!-- USUARIO -->
+  <div class="input-group mb-3">
+
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Usuario"
+      [(ngModel)]="username"
+      name="username">
+
+    <div class="input-group-text">
+      <i class="bi bi-person"></i>
+    </div>
+
+  </div>
+
+  <!-- PASSWORD -->
+  <div class="input-group mb-3">
+
+    <input
+      type="password"
+      class="form-control"
+      placeholder="Contraseña"
+      [(ngModel)]="password"
+      name="password">
+
+    <div class="input-group-text">
+      <i class="bi bi-lock"></i>
+    </div>
+
+  </div>
+
+  <!-- PERFIL -->
+  <div class="input-group mb-3">
+
+    <select
+      class="form-select"
+      [(ngModel)]="selectedRole"
+      name="role">
+
+      <option value="superadmin">
+        Super Administrador
+      </option>
+
+      <option value="admin">
+        Administrador
+      </option>
+
+      <option value="usuario">
+        Usuario General
+      </option>
+
+    </select>
+
+    <div class="input-group-text">
+      <i class="bi bi-person-badge"></i>
+    </div>
+
+  </div>
+
+  <!-- BOTON -->
+  <button
+    type="button"
+    class="btn btn-primary w-100"
+    (click)="login()">
+
+    Ingresar
+
+  </button>
+
+</form>

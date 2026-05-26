@@ -1,0 +1,79 @@
+<aside
+  class="main-sidebar"
+  [class.collapsed]="collapsed">
+
+  <!-- HEADER -->
+  <div class="sidebar-header">
+
+    <span class="logo-text">
+      ERP MYPE
+    </span>
+
+  </div>
+
+  <!-- MENU -->
+  <nav class="sidebar-nav">
+
+    <ul class="nav flex-column">
+
+      <li
+        class="nav-item"
+        *ngFor="let item of menuItems">
+
+        <!-- ITEM SIMPLE -->
+        <a
+          *ngIf="!item.children"
+          [routerLink]="item.route"
+          class="nav-link">
+
+          <i [class]="item.icon"></i>
+
+          <span>{{ item.label }}</span>
+
+        </a>
+
+        <!-- ITEM PADRE -->
+        <a
+          *ngIf="item.children"
+          class="nav-link"
+          (click)="toggle(item)">
+
+          <i [class]="item.icon"></i>
+
+          <span>{{ item.label }}</span>
+
+          <i
+            class="bi ms-auto"
+            [ngClass]="item.open
+              ? 'bi-chevron-down'
+              : 'bi-chevron-left'">
+          </i>
+
+        </a>
+
+        <!-- SUBMENU -->
+        <ul
+          class="submenu"
+          *ngIf="item.open">
+
+          <li
+            *ngFor="let child of item.children">
+
+            <a
+              [routerLink]="child.route">
+
+              {{ child.label }}
+
+            </a>
+
+          </li>
+
+        </ul>
+
+      </li>
+
+    </ul>
+
+  </nav>
+
+</aside>
