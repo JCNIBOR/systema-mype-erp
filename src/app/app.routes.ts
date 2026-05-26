@@ -8,13 +8,29 @@ from './layout/dashboard/dashboard';
 
 export const routes: Routes = [
 
-  /* LOGIN */
+  /* =====================================
+     DEFAULT
+  ===================================== */
+
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+
+  /* =====================================
+     LOGIN
+  ===================================== */
+
   {
     path: 'login',
     component: LoginComponent
   },
 
-  /* DASHBOARD */
+  /* =====================================
+     DASHBOARD LAYOUT
+  ===================================== */
+
   {
     path: '',
 
@@ -22,6 +38,7 @@ export const routes: Routes = [
 
     children: [
 
+      /* HOME */
       {
         path: 'dashboard',
 
@@ -30,6 +47,7 @@ export const routes: Routes = [
             .then(m => m.DASHBOARD_ROUTES)
       },
 
+      /* EMPRESA */
       {
         path: 'empresa',
 
@@ -41,12 +59,9 @@ export const routes: Routes = [
     ]
   },
 
-  /* DEFAULT */
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
+  /* =====================================
+     NOT FOUND
+  ===================================== */
 
   {
     path: '**',
