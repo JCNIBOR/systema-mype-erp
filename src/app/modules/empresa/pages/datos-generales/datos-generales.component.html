@@ -1,0 +1,175 @@
+<div class="container-fluid">
+
+  <!-- TITULO -->
+  <div class="mb-4">
+
+    <h3>
+      Datos Generales de la Empresa
+    </h3>
+
+    <p class="text-muted">
+
+      Configuración principal empresarial
+
+    </p>
+
+  </div>
+
+  <!-- CARD -->
+  <div class="card shadow-sm border-0">
+
+    <div class="card-body">
+
+      <form
+        [formGroup]="empresaForm">
+
+        <div class="row">
+
+          <!-- RAZON SOCIAL -->
+          <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+
+              Razón Social
+
+            </label>
+
+            <input
+              type="text"
+              class="form-control"
+              formControlName="razonSocial">
+
+          </div>
+
+          <!-- NOMBRE COMERCIAL -->
+          <div class="col-md-6 mb-3">
+
+            <label class="form-label">
+
+              Nombre Comercial
+
+            </label>
+
+            <input
+              type="text"
+              class="form-control"
+              formControlName="nombreComercial">
+
+          </div>
+
+          <!-- RUC -->
+          <div class="col-md-4 mb-3">
+
+            <label class="form-label">
+
+              RUC
+
+            </label>
+
+            <input
+              type="text"
+              class="form-control"
+              formControlName="ruc">
+
+          </div>
+
+          <!-- TELEFONO -->
+          <div class="col-md-4 mb-3">
+
+            <label class="form-label">
+
+              Teléfono
+
+            </label>
+
+            <input
+              type="text"
+              class="form-control"
+              formControlName="telefono">
+
+          </div>
+
+          <!-- EMAIL -->
+          <div class="col-md-4 mb-3">
+
+            <label class="form-label">
+
+              Correo
+
+            </label>
+
+            <input
+              type="email"
+              class="form-control"
+              formControlName="email">
+
+          </div>
+
+          <!-- DIRECCION -->
+          <div class="col-md-12 mb-3">
+
+            <label class="form-label">
+
+              Dirección
+
+            </label>
+
+            <textarea
+              rows="3"
+              class="form-control"
+              formControlName="direccion">
+            </textarea>
+
+          </div>
+
+          <!-- LOGO -->
+          <div class="col-md-12 mb-4">
+
+            <label class="form-label">
+
+              Logo
+
+            </label>
+
+            <input
+              type="file"
+              class="form-control"
+              (change)="onLogoSelected($event)">
+
+          </div>
+
+          <!-- PREVIEW -->
+          <div
+            class="col-md-12 mb-4"
+            *ngIf="logoPreview">
+
+            <img
+              [src]="logoPreview"
+              class="img-thumbnail"
+              style="max-height: 120px;">
+
+          </div>
+
+        </div>
+
+        <!-- BOTON -->
+        <div class="text-end">
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="guardar()">
+
+            Guardar Datos
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,13 +1,13 @@
-<div class="app-layout">
+<div class="app-wrapper">
 
   <!-- SIDEBAR -->
   <app-sidebar
     [collapsed]="sidebarCollapsed">
   </app-sidebar>
 
-  <!-- CONTENIDO GENERAL -->
+  <!-- MAIN -->
   <div
-    class="main-container"
+    class="main-wrapper"
     [class.expanded]="sidebarCollapsed">
 
     <!-- NAVBAR -->
@@ -16,8 +16,8 @@
       (toggleSidebar)="toggleSidebar()">
     </app-navbar>
 
-    <!-- CONTENIDO -->
-    <main class="content-area">
+    <!-- CONTENT -->
+    <main class="content-wrapper">
 
       <router-outlet></router-outlet>
 

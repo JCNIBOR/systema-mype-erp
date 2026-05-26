@@ -2,46 +2,60 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnInit,
   Output
 } from '@angular/core';
 
-import { CommonModule } from '@angular/common';
+import { CommonModule }
+from '@angular/common';
+
+import { RouterModule }
+from '@angular/router';
+
+import { AuthService }
+from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
+
   standalone: true,
-  imports: [CommonModule],
+
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
+
   templateUrl: './navbar.html',
+
   styleUrl: './navbar.css'
 })
-export class NavbarComponent {
+export class NavbarComponent
+implements OnInit {
 
-  @Input() collapsed = false;
+  @Input()
+  collapsed = false;
 
-  @Output() toggleSidebar =
+  @Output()
+  toggleSidebar =
     new EventEmitter<void>();
 
-  userName = 'Alexander Pierce';
+  username = '';
 
-  onToggleSidebar(): void {
-    this.toggleSidebar.emit();
+  constructor(
+    private authService: AuthService
+  ) {}
+
+  ngOnInit(): void {
+
+    this.username =
+      this.authService.getUsername();
   }
 
   logout(): void {
-    console.log('logout');
+
+    this.authService.logout();
+
+    location.href = '/login';
   }
 
-  toggleFullscreen(): void {
-
-  if (!document.fullscreenElement) {
-
-    document.documentElement.requestFullscreen();
-
-  } else {
-
-    document.exitFullscreen();
-
-  }
-
- }
 }

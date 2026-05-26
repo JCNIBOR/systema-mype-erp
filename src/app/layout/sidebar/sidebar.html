@@ -2,11 +2,15 @@
   class="main-sidebar"
   [class.collapsed]="collapsed">
 
-  <!-- HEADER -->
-  <div class="sidebar-header">
+  <!-- BRAND -->
+  <div class="sidebar-brand">
 
-    <span class="logo-text">
+    <i class="bi bi-box"></i>
+
+    <span *ngIf="!collapsed">
+
       ERP MYPE
+
     </span>
 
   </div>
@@ -20,7 +24,7 @@
         class="nav-item"
         *ngFor="let item of menuItems">
 
-        <!-- ITEM SIMPLE -->
+        <!-- SIMPLE -->
         <a
           *ngIf="!item.children"
           [routerLink]="item.route"
@@ -28,11 +32,15 @@
 
           <i [class]="item.icon"></i>
 
-          <span>{{ item.label }}</span>
+          <span *ngIf="!collapsed">
+
+            {{ item.label }}
+
+          </span>
 
         </a>
 
-        <!-- ITEM PADRE -->
+        <!-- PARENT -->
         <a
           *ngIf="item.children"
           class="nav-link"
@@ -40,9 +48,14 @@
 
           <i [class]="item.icon"></i>
 
-          <span>{{ item.label }}</span>
+          <span *ngIf="!collapsed">
+
+            {{ item.label }}
+
+          </span>
 
           <i
+            *ngIf="!collapsed"
             class="bi ms-auto"
             [ngClass]="item.open
               ? 'bi-chevron-down'
@@ -54,7 +67,7 @@
         <!-- SUBMENU -->
         <ul
           class="submenu"
-          *ngIf="item.open">
+          *ngIf="item.open && !collapsed">
 
           <li
             *ngFor="let child of item.children">

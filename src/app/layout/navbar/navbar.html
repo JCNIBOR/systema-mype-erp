@@ -1,15 +1,16 @@
-<nav class="main-header navbar navbar-expand">
+<nav
+  class="app-header navbar navbar-expand bg-body">
 
-  <!-- IZQUIERDA -->
-  <ul class="navbar-nav align-items-center">
+  <!-- LEFT -->
+  <ul class="navbar-nav">
 
-    <!-- HAMBURGUESA -->
+    <!-- TOGGLE -->
     <li class="nav-item">
 
       <a
         class="nav-link"
-        role="button"
-        (click)="onToggleSidebar()">
+        href="javascript:void(0)"
+        (click)="toggleSidebar.emit()">
 
         <i class="bi bi-list"></i>
 
@@ -17,28 +18,32 @@
 
     </li>
 
-    <!-- LIVE PREVIEW -->
+    <!-- DOCS -->
     <li class="nav-item d-none d-md-block">
 
       <a class="nav-link">
-        Live Preview
+
+        Documentation
+
       </a>
 
     </li>
 
-    <!-- DOCUMENTATION -->
+    <!-- LIVE -->
     <li class="nav-item d-none d-md-block">
 
       <a class="nav-link">
-        Documentation
+
+        Live Preview
+
       </a>
 
     </li>
 
   </ul>
 
-  <!-- DERECHA -->
-  <ul class="navbar-nav ms-auto align-items-center">
+  <!-- RIGHT -->
+  <ul class="navbar-nav ms-auto">
 
     <!-- SEARCH -->
     <li class="nav-item">
@@ -51,16 +56,15 @@
 
     </li>
 
-    <!-- MENSAJES -->
+    <!-- NOTIFICATIONS -->
     <li class="nav-item dropdown">
 
-      <a
-        class="nav-link position-relative"
-        data-bs-toggle="dropdown">
+      <a class="nav-link position-relative">
 
-        <i class="bi bi-chat-text"></i>
+        <i class="bi bi-bell-fill"></i>
 
-        <span class="badge rounded-pill bg-danger navbar-badge">
+        <span
+          class="navbar-badge badge text-bg-warning">
 
           3
 
@@ -68,130 +72,43 @@
 
       </a>
 
-      <div class="dropdown-menu dropdown-menu-end dropdown-lg">
-
-        <span class="dropdown-header">
-
-          3 mensajes
-
-        </span>
-
-        <div class="dropdown-divider"></div>
-
-        <a class="dropdown-item">
-
-          Nuevo mensaje recibido
-
-        </a>
-
-      </div>
-
     </li>
 
-    <!-- ALERTAS -->
+    <!-- ALERTS -->
     <li class="nav-item dropdown">
 
-      <a
-        class="nav-link position-relative"
-        data-bs-toggle="dropdown">
+      <a class="nav-link position-relative">
 
-        <i class="bi bi-bell-fill"></i>
+        <i class="bi bi-chat-text-fill"></i>
 
-        <span class="badge rounded-pill bg-warning navbar-badge">
+        <span
+          class="navbar-badge badge text-bg-danger">
 
-          15
-
-        </span>
-
-      </a>
-
-      <div class="dropdown-menu dropdown-menu-end dropdown-lg">
-
-        <span class="dropdown-header">
-
-          15 notificaciones
+          5
 
         </span>
-
-        <div class="dropdown-divider"></div>
-
-        <a class="dropdown-item">
-
-          Nueva alerta del sistema
-
-        </a>
-
-      </div>
-
-    </li>
-
-    <!-- FULLSCREEN -->
-    <li class="nav-item">
-
-      <a
-        class="nav-link"
-        (click)="toggleFullscreen()">
-
-        <i class="bi bi-arrows-fullscreen"></i>
 
       </a>
 
     </li>
 
-    <!-- USUARIO -->
-    <li class="nav-item dropdown">
+    <!-- USER -->
+    <li class="nav-item dropdown user-menu">
 
-      <a
-        class="nav-link dropdown-toggle"
-        data-bs-toggle="dropdown">
+      <a class="nav-link d-flex align-items-center">
 
-        <i class="bi bi-person-fill"></i>
+        <img
+          src="https://i.pravatar.cc/40"
+          class="user-image rounded-circle shadow"
+          alt="User">
 
-        {{ userName }}
+        <span class="d-none d-md-inline ms-2">
+
+          {{ username }}
+
+        </span>
 
       </a>
-
-      <ul class="dropdown-menu dropdown-menu-end">
-
-        <li>
-
-          <a class="dropdown-item">
-
-            Perfil
-
-          </a>
-
-        </li>
-
-        <li>
-
-          <a class="dropdown-item">
-
-            Configuración
-
-          </a>
-
-        </li>
-
-        <li>
-
-          <hr class="dropdown-divider">
-
-        </li>
-
-        <li>
-
-          <a
-            class="dropdown-item text-danger"
-            (click)="logout()">
-
-            Cerrar sesión
-
-          </a>
-
-        </li>
-
-      </ul>
 
     </li>
 

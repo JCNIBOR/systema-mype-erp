@@ -1,0 +1,14 @@
+.card {
+
+  border-radius: 12px;
+}
+
+.form-label {
+
+  font-weight: 600;
+}
+
+img {
+
+  object-fit: contain;
+}

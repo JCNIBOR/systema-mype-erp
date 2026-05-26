@@ -1,19 +1,56 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login';
-import { DashboardComponent } from './layout/dashboard/dashboard';
-import { HomeComponent } from './pages/home/home';
+
+import { LoginComponent }
+from './layout/login/login';
+
+import { DashboardComponent }
+from './layout/dashboard/dashboard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
+
+  /* LOGIN */
   {
-    path: 'dashboard',
+    path: 'login',
+    component: LoginComponent
+  },
+
+  /* DASHBOARD */
+  {
+    path: '',
+
     component: DashboardComponent,
+
     children: [
+
       {
-        path: '',
-        component: HomeComponent
+        path: 'dashboard',
+
+        loadChildren: () =>
+          import('./modules/dashboard/dashboard.routes')
+            .then(m => m.DASHBOARD_ROUTES)
+      },
+
+      {
+        path: 'empresa',
+
+        loadChildren: () =>
+          import('./modules/empresa/empresa.routes')
+            .then(m => m.EMPRESA_ROUTES)
       }
+
     ]
+  },
+
+  /* DEFAULT */
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+
+  {
+    path: '**',
+    redirectTo: 'login'
   }
+
 ];
